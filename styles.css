@@ -1,14 +1,29 @@
+body{
+    font-family: Lato;
+}
+
 header{
-    background-color: grey;
-    padding: 20px;
+    background-color: white;
+    border-style: solid;
+}
+
+.concordiaLogo{
+    text-align: left;
+    color: #912338;
+}
+
+.signOut{
+    text-align: right;
 }
 
 nav{
-    background-color: grey;
+    background-color: white;
     height: 100vh;
-    width: 150px;
+    width: 100px;
     float: left;
     padding: 10px;
+    border-style: solid;
+    text-align: center;
 }
 
 nav a{
@@ -23,7 +38,7 @@ nav a:hover{
 }
 
 main{
-    margin-left: 150px;
+    margin-left: 100px;
 }
 
 main table tr th{

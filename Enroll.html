@@ -27,14 +27,99 @@
     </nav>
     
     <main>
-        <table>
+        <table border="1px" style="text-align: center;">
             <tr>
-                <th>Welcome to the Enroll page!</th>
+                <td><button onclick="changeSlide(-1)" href="#">&#8592;</button></td>
+                <td>
+                    <span class="slides">
+                        <img src="images/Winter2025.jpg">
+                    </span>
+            
+                    <span class="slides">
+                        <img src="images/Summer2025.jpg">
+                    </span>
+            
+                    <span class="slides">
+                        <img src="images/Fall2025.jpg">
+                    </span>
+            
+                    <span class="slides">
+                        <img src="images/Winter2026.jpg">
+                    </span>
+                </td>
+                <td><button onclick="changeSlide(1)" href="#">&#8594;</button></td>
             </tr>
             <tr>
-                <th>INSERT CONTENT</th>
+                <td><p>My Courses</p></td>
+            </tr>
+            <tr>
+                <td colspan="3"><img src="images/PROTOTYPECurrentCourses.jpg" width="500px"></td>
+            </tr>
+            <tr>
+                <td><p>Selected Courses</p></td>
+                <td><input type="text" placeholder="Search a course"><button onclick="EnterSearch()">Enter</button></td>
+                <td rowspan="2">
+                    <table>
+                        <tr><td>Filter By</td></tr>
+                        <tr><td><a target="_blank" href="https://www.concordia.ca/academics/undergraduate/calendar/current/section-71-gina-cody-school-of-engineering-and-computer-science/section-71-70-department-of-computer-science-and-software-engineering/section-71-70-2-degree-requirements-bcompsc-.html"><button>Program Requisites</button></a></td></tr>
+                        <tr><td><a target="_blank" href="https://www.concordia.ca/academics/undergraduate/calendar/current/section-71-gina-cody-school-of-engineering-and-computer-science/section-71-110-complementary-studies-for-engineering-and-computer-science-students.html"><button>Technical Electives</button></td></tr>
+                        <tr><td><a target="_blank" href="https://www.concordia.ca/artsci/students/elective-courses.html"><button>Comp Sci Optional</button></a></td></tr>
+                        <tr><td><a target="_blank" href="https://www.concordia.ca/lifelong-learning/seniors.html"><button>Non-Credited</button></a></td></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%;">
+                    <a target="_blank" href="https://www.concordia.ca/cunews/main/stories/2017/02/16/class-schedule-builder-created-by-grads.html"><button>Course Builder</button></a>
+                    <p>COMP 228 <button onclick="Delete()"><img src="images/PROTOTYPEDelete.jpg" height="20x"></button></p>
+                </td>
+                <td>
+                    <p>COMP 443 <a href="COMP443.html"><button>i</button></a> <button onclick="Add()">+</button></p>
+                    <p>COMP 335 <a href="COMP335.html"><button>i</button></a> <button onclick="Add()">+</button></p>
+                    <p>COMP 225 <a href="COMP225.html"><button>i</button></a> <button onclick="Add()">+</button></p>
+                    <p>COMP 228 <a href="COMP228.html"><button>i</button></a> <button onclick="Add()">+</button></p>
+                    <p>COMP 290 <a href="COMP290.html"><button>i</button></a> <button onclick="Add()">+</button></p>
+                    <p>COMP 229 <a href="COMP229.html"><button>i</button></a> <button onclick="Add()">+</button></p>
+                </td>
             </tr>
         </table>
     </main>
+
+    <script>
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function showSlide(n) {
+            let i;
+            const slides = document.getElementsByClassName("slides");
+            if (n > slides.length){
+                slideIndex = 1
+            }
+            if (n < 1){
+                slideIndex = slides.length
+            }
+
+            for (i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+
+        function EnterSearch(){
+            alert("This button will display the searched course below");
+        }
+
+        function Delete(){
+            alert("This button will delete selected course in course cart")
+        }
+
+        function Add(){
+            alert("This button will add selected course in course cart")
+        }
+    </script>
 </body>
 </html>

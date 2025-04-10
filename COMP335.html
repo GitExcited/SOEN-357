@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP335</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <table style="width: 100%;">
+            <tr>
+                <th class="concordiaLogo">Concordia</th>
+                <td class="signOut">Sign Out <img src="images/SignOut.jpg" height="15px"></td>
+            </tr>
+        </table>
+    </header>
+    
+    <nav>
+        <a href="Home.html"><img src="images/Home.jpg" height="50px"><br>Home</a>
+        <a href="Academics.html"><img src="images/Academics.jpg" height="50px"><br>Academics</a>
+        <a href="Enroll.html"><img src="images/Enroll.jpg" height="50px"><br>Enroll</a>
+        <a href="Timetable.html"><img src="images/Timetable.jpg" height="50px"><br>Timetable</a>
+        <a href="Courses.html"><img src="images/Courses.jpg" height="50px"><br>Courses</a>
+        <a href="PersonalInfo.html"><img src="images/PersonalInfo.jpg" height="50px"><br>Personal Information</a>
+        <a href="Settings.html"><img src="images/Settings.jpg" height="50px"><br>Settings</a>
+    </nav>
+    
+    <main>
+        <table>
+            <tr>
+                <th colspan="2" style="text-align: left; color: #912338;"><h1>COMP 335</h1></th>
+                <td style="text-align: center;"><button style="height: 40px; width: 40px;" onclick="Add()">+</button><br>Add Course</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Engineering and Computer Science Department</p>
+                    <img src="images/PROTOTYPEFallWinter.jpg" width="200px">
+                </td>
+                <td style="text-align: right;">
+                    <img src="images/PROTOTYPEWorkload.jpg" height="100px">
+                </td>
+                <td style="text-align: center;"><a><img src="images/Download.jpg" height="40px" onclick="Download()"></a><br>Download Course Outline </td>
+            </tr>
+            <tr>
+                <td colspan="2"><h3>Introduction to theoretical computer science<br>(4 Credits)</h3></td>
+                <td rowspan="2"><img src="images/PROTOTYPEPrereq.jpg" width="150px"></td>
+            </tr>
+            <tr>
+                <td colspan="2">This course covers the following topics: finite state automata and regular languages; push‑down automata and context‑free languages; pumping lemmas; applications to parsing; Turing machines; undecidability and decidability</td>
+            </tr>
+            <tr>
+                <td colspan="3"><img src="images/PROTOTYPESchedule.jpg" width="550px"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <h3>Reviews & Discussion</h3>
+                    <input type="text" placeholder="Discuss this course">
+                    <button onclick="EnterSearch()">Enter</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3"><img src="images/PROTOTYPEReviews.jpg" width="550px"></td>
+            </tr>
+        </table>
+
+        <script>
+            function Add(){
+                alert("This button will add course in course cart")
+            }
+
+            function Download(){
+                alert("This button will download the course outline given by the department")
+            }
+
+            function EnterSearch(){
+                alert("This button will enter the comment in the database");
+            }
+        </script>
+    </main>
+</body>
+</html>

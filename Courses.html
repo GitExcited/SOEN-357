@@ -29,12 +29,65 @@
     <main>
         <table>
             <tr>
-                <th>Welcome to the Courses page!</th>
+                <td><button onclick="changeSlide(-1)" href="#">&#8592;</button></td>
+                <td>
+                    <span class="slides">
+                        <img src="images/Winter2025.jpg">
+                    </span>
+            
+                    <span class="slides">
+                        <img src="images/Summer2025.jpg">
+                    </span>
+            
+                    <span class="slides">
+                        <img src="images/Fall2025.jpg">
+                    </span>
+            
+                    <span class="slides">
+                        <img src="images/Winter2026.jpg">
+                    </span>
+                </td>
+                <td><button onclick="changeSlide(1)" href="#">&#8594;</button></td>
             </tr>
             <tr>
-                <th>INSERT CONTENT</th>
+                <td colspan="3"><h3>Here are the available courses:</h3></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <p>COMP 444: System Software Design (4 Credits) <a href="COMP444.html"><button>i</button></a>
+                    <p>COMP 335: Introduction to theoretical computer science (4 Credits) <a href="COMP335.html"><button>i</button></a>
+                    <p>COMP 218: Fundamentals of Programming (3 Credits) <a href="COMP218.html"><button>i</button></a>
+                    <p>COMP 228: System Hardware (3 Credits) <a href="COMP228.html"><button>i</button></a>
+                    <p>COMP 249: Object-Oriented Programming II (3.5 Credits) <a href="COMP249.html"><button>i</button></a>
+                    <p>COMP 339: Combinatronics (3 Credits) <a href="COMP339.html"><button>i</button></a>
+                </td>
             </tr>
         </table>
     </main>
+
+    <script>
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function showSlide(n) {
+            let i;
+            const slides = document.getElementsByClassName("slides");
+            if (n > slides.length){
+                slideIndex = 1
+            }
+            if (n < 1){
+                slideIndex = slides.length
+            }
+
+            for (i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
 </body>
 </html>

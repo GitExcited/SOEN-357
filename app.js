@@ -357,6 +357,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Initialize the section buttons
         initSectionButtons();
+
+        // Initialize comment functionality
+        initCommentFunctionality();
     }
     
     // Handle filter options
@@ -454,6 +457,89 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Code to update the timetable would go here
             });
+        });
+    }
+
+    // Handle comment section functionality
+    function initCommentFunctionality() {
+        // Handle filter buttons
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Sort logic would go here in a real application
+                const sortBy = this.textContent.trim().toLowerCase();
+                console.log(`Sorting by: ${sortBy}`);
+            });
+        });
+        
+        // Handle like/dislike buttons
+        const likeBtns = document.querySelectorAll('.like-btn');
+        const dislikeBtns = document.querySelectorAll('.dislike-btn');
+        
+        likeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const likesCount = this.previousElementSibling;
+                let currentCount = parseInt(likesCount.textContent);
+                
+                if (this.classList.contains('active')) {
+                    // Unlike
+                    currentCount--;
+                    this.classList.remove('active');
+                } else {
+                    // Like
+                    currentCount++;
+                    this.classList.add('active');
+                    
+                    // Remove dislike if present
+                    const dislikeBtn = this.nextElementSibling;
+                    if (dislikeBtn.classList.contains('active')) {
+                        dislikeBtn.classList.remove('active');
+                    }
+                }
+                
+                likesCount.textContent = currentCount;
+            });
+        });
+        
+        dislikeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const likesCount = this.previousElementSibling.previousElementSibling;
+                let currentCount = parseInt(likesCount.textContent);
+                
+                if (this.classList.contains('active')) {
+                    // Remove dislike
+                    this.classList.remove('active');
+                } else {
+                    // Dislike
+                    this.classList.add('active');
+                    
+                    // Remove like if present
+                    const likeBtn = this.previousElementSibling;
+                    if (likeBtn.classList.contains('active')) {
+                        likeBtn.classList.remove('active');
+                        currentCount--;
+                        likesCount.textContent = currentCount;
+                    }
+                }
+            });
+        });
+        
+        // Handle comment input
+        const commentInput = document.querySelector('.comment-input');
+        commentInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value.trim() !== '') {
+                // In a real app, you would save the comment to a database
+                console.log('New comment:', this.value);
+                
+                // Clear the input
+                this.value = '';
+                
+                // Show a message that comment was added
+                alert('Comment added!');
+            }
         });
     }
 });

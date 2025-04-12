@@ -672,3 +672,77 @@ main table tr td{
     background-color: var(--primary);
     color: white;
 }
+
+/* Updated Requisite Tree Styles */
+.requisite-tree {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.requisite-tree h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.tree-diagram {
+    position: relative;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tree-node {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.node-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8d7da;
+    margin-bottom: 10px;
+}
+
+.node-circle span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tree-node.current .node-circle {
+    background-color: var(--primary);
+    color: white;
+}
+
+.tree-subsequent-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 220px;
+    margin-right: 50px;
+}
+
+.tree-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.tree-node.prerequisite {
+    margin-left: 50px;
+}
+
+/* Make sure tree elements align properly */
+.tree-diagram {
+    width: 100%;
+    padding: 0 20px;
+}

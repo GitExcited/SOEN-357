@@ -4,7 +4,6 @@ body{
 
 header{
     background-color: white;
-    border-style: solid;
 }
 
 .concordiaLogo{
@@ -22,7 +21,6 @@ nav{
     width: 100px;
     float: left;
     padding: 10px;
-    border-style: solid;
     text-align: center;
 }
 
@@ -48,3 +46,306 @@ main table tr th{
 main table tr td{
     width: 5000px;
 }
+
+:root {
+    --primary: #8B1538;
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-200: #E5E7EB;
+    --gray-300: #D1D5DB;
+    --gray-400: #9CA3AF;
+    --gray-600: #4B5563;
+    --blue-100: #DBEAFE;
+    --blue-500: #3B82F6;
+    --red-50: #FEF2F2;
+    --red-600: #DC2626;
+    --red-700: #B91C1C;
+    --green-500: #22C55E;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--gray-50);
+  }
+  
+  .app {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: white;
+    border-right: 1px solid var(--gray-200);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo {
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  
+  .logo h1 {
+    color: var(--primary);
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  nav {
+    padding: 1rem;
+    flex: 1;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.75rem;
+    color: var(--gray-600);
+    background: none;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    text-align: left;
+  }
+  
+  .nav-item:hover {
+    background-color: var(--gray-100);
+  }
+  
+  .nav-item.active {
+    background-color: var(--gray-100);
+    font-weight: bold;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 2rem;
+    background-color: var(--gray-50);
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .term-selector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .term {
+    background-color: var(--blue-100);
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .term i {
+    color: var(--blue-500);
+  }
+  
+  .arrow-btn {
+    padding: 0.5rem;
+    border: none;
+    background: none;
+    border-radius: 9999px;
+    cursor: pointer;
+  }
+  
+  .arrow-btn:hover {
+    background-color: var(--gray-200);
+  }
+  
+  .sign-out {
+    color: var(--red-600);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .sign-out:hover {
+    color: var(--red-700);
+  }
+  
+  .my-courses {
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+  }
+  
+  .my-courses h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .courses-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto auto;
+    gap: 1rem;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .courses-grid.header {
+    color: var(--gray-600);
+    font-weight: 500;
+  }
+  
+  .course-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto auto;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: var(--gray-100);
+    margin-bottom: 0.5rem;
+    align-items: center;
+  }
+  
+  .course-item:hover {
+    background-color: var(--gray-200);
+  }
+  
+  .course-item.pending {
+    background-color: var(--red-50);
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .status-dot {
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--green-500);
+    border-radius: 9999px;
+  }
+  
+  .enroll-btn {
+    background-color: var(--red-600);
+    color: white;
+    border: none;
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .search-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .search-input {
+    flex: 1;
+    position: relative;
+  }
+  
+  .search-input i {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-400);
+  }
+  
+  .search-input input {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.5rem;
+    outline: none;
+  }
+  
+  .search-input input:focus {
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--gray-200);
+    border: none;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .courses-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .selected-courses {
+    max-width: 100%;
+  }
+  
+  .selected-courses .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .selected-courses h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .schedule-builder {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .selected-course {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .selected-course .actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .selected-course .actions i {
+    cursor: pointer;
+  }

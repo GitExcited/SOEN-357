@@ -1,6 +1,16 @@
 # Concordia University Course Registration UI Redesign
+<details>
+<summary>🌟Click to view Screenshots 📸</summary>
+
+### Screenshot 1: Main page
 ![image](https://github.com/user-attachments/assets/be4aa302-5171-4261-84f2-b7252ccc4cc1)
+
+### Screenshot 2: Course Information 
 ![image](https://github.com/user-attachments/assets/abfddaa9-9ab2-4e9a-996b-d522a31791f7)
+
+</details>
+
+[💻Watch the Demo on YouTube 🎥](https://youtu.be/WGM50Wz1WeE)
 
 
 ## Description

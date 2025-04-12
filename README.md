@@ -12,6 +12,12 @@
 
 [💻Watch the Demo on YouTube 🎥](https://youtu.be/WGM50Wz1WeE)
 
+## Setup
+
+Clone repo using 
+`git clone https://github.com/GitExcited/SOEN-357`
+
+Open the home.html file on your browser of choice or through a CLI
 
 ## Description
 

@@ -6,8 +6,6 @@
     <title>Student Hub - Home</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Adding Font Awesome for icons -->
-     <!-- Change this line at the bottom of Home.html -->
-<script src="app.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -122,13 +120,22 @@
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="SEARCH A COURSE">
                 </div>
-                <button class="filter-btn">
-                    FILTER BY
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+                <!-- Filter dropdown -->
+                <div class="filter-dropdown">
+                    <button class="filter-btn">
+                        FILTER BY
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-options">
+                        <div class="filter-option">PROGRAM REQUISITES</div>
+                        <div class="filter-option">TECHNICAL ELECTIVES</div>
+                        <div class="filter-option">COMP SCI OPTIONAL</div>
+                        <div class="filter-option">NON-CREDITED</div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Selected Courses Section -->
+            <!-- Selected Courses and Filtered Courses Section -->
             <div class="courses-container">
                 <div class="selected-courses">
                     <div class="header">
@@ -138,35 +145,139 @@
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
+                    <!-- Selected courses will be rendered here -->
+                    <div class="selected-courses-list"></div>
+                </div>
+                
+                <!-- Filtered courses will be rendered here -->
+                <div class="filtered-courses"></div>
+            </div>
+        </div>
+    </div>
 
-                    <div class="selected-course">
-                        <span>COMP 443</span>
-                        <div class="actions">
-                            <i class="fas fa-info-circle"></i>
-                            <i class="fas fa-plus"></i>
+    <!-- Course Info Modal -->
+    <div id="courseInfoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            
+            <div class="course-header">
+                <h1 id="modalCourseCode">COMP 335</h1>
+                <button class="add-course-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Course</span>
+                </button>
+            </div>
+            
+            <div class="course-details">
+                <div class="department-info">
+                    <p>Engineering and Computer Science Department</p>
+                    <div class="term-buttons">
+                        <button class="term-btn fall">Fall 2025</button>
+                        <button class="term-btn winter">Winter 2026</button>
+                    </div>
+                </div>
+                
+                <div class="course-workload">
+                    <h3>Workload</h3>
+                    <div class="workload-charts">
+                        <div class="chart">
+                            <h4>Exams</h4>
+                            <div class="chart-bars">
+                                <div class="bar" style="height: 70%"></div>
+                                <div class="bar" style="height: 90%"></div>
+                                <div class="bar" style="height: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <h4>Labs</h4>
+                            <div class="chart-bars">
+                                <div class="bar" style="height: 50%"></div>
+                                <div class="bar" style="height: 80%"></div>
+                                <div class="bar" style="height: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <h4>Projects</h4>
+                            <div class="chart-bars">
+                                <div class="bar" style="height: 60%"></div>
+                                <div class="bar" style="height: 30%"></div>
+                                <div class="bar" style="height: 50%"></div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="selected-course">
-                        <span>COMP 335</span>
-                        <div class="actions">
-                            <i class="fas fa-info-circle"></i>
-                            <i class="fas fa-plus"></i>
+                </div>
+                
+                <div class="download-section">
+                    <button class="download-btn">
+                        <i class="fas fa-download"></i>
+                        <span>Download course outline</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="course-sections">
+                <div class="course-intro">
+                    <h3>Introduction to theoretical computer science</h3>
+                    <p>This course covers the following topics: finite state automata and regular languages; push-down automata and context-free languages; pumping lemmas; applications to parsing; Turing machines; undecidability and decidability.</p>
+                </div>
+                
+                <div class="course-credits">
+                    <h2>4</h2>
+                    <p>Credits</p>
+                </div>
+            </div>
+            
+            <div class="requisite-tree">
+                <h3>Requisite Tree</h3>
+                <div class="tree-diagram">
+                    <!-- Left prerequisite -->
+                    <div class="tree-node prerequisite left">
+                        <div class="node-circle">
+                            <span>COMP 228</span>
                         </div>
                     </div>
-
-                    <div class="selected-course">
-                        <span>COEN 225</span>
-                        <div class="actions">
-                            <i class="fas fa-info-circle"></i>
-                            <i class="fas fa-plus"></i>
+                    
+                    <!-- Center current course -->
+                    <div class="tree-node current">
+                        <div class="node-circle">
+                            <span id="modalTreeCourseCode">COMP 335</span>
                         </div>
                     </div>
+                    
+                    <!-- Right subsequent courses -->
+                    <div class="tree-subsequent-container">
+                        <div class="tree-node subsequent">
+                            <div class="node-circle">
+                                <span>COMP 357</span>
+                            </div>
+                        </div>
+                        <div class="tree-node subsequent">
+                            <div class="node-circle">
+                                <span>COMP 455</span>
+                            </div>
+                        </div>
+                        <div class="tree-node subsequent">
+                            <div class="node-circle">
+                                <span>COMP 420</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lines connecting the nodes -->
+                    <svg class="tree-lines" width="100%" height="100%" viewBox="0 0 800 250" preserveAspectRatio="none">
+                        <!-- Horizontal line from prereq to current -->
+                        <line x1="150" y1="125" x2="400" y2="125" stroke="#ccc" stroke-width="2" />
+                        
+                        <!-- Lines from current to subsequent courses -->
+                        <line x1="450" y1="125" x2="650" y2="50" stroke="#ccc" stroke-width="2" />
+                        <line x1="450" y1="125" x2="650" y2="125" stroke="#ccc" stroke-width="2" />
+                        <line x1="450" y1="125" x2="650" y2="200" stroke="#ccc" stroke-width="2" />
+                    </svg>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

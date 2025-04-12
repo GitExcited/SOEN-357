@@ -333,25 +333,30 @@ document.addEventListener('DOMContentLoaded', function() {
     function showCourseInfo(course) {
         const modal = document.getElementById('courseInfoModal');
         const modalCourseCode = document.getElementById('modalCourseCode');
+        const modalTreeCourseCode = document.getElementById('modalTreeCourseCode');
         
-        // Set the course code in the modal
+        // Set the course code in the modal header and tree
         modalCourseCode.textContent = course.code;
+        modalTreeCourseCode.textContent = course.code;
         
         // Show the modal
         modal.style.display = 'block';
         
-        // Add event listener to close modal
+        // Close button functionality
         const closeBtn = document.querySelector('.close-modal');
         closeBtn.addEventListener('click', function() {
             modal.style.display = 'none';
         });
         
-        // Close modal when clicking outside of it
+        // Close modal when clicking outside
         window.addEventListener('click', function(event) {
             if (event.target == modal) {
                 modal.style.display = 'none';
             }
         });
+
+        // Initialize the section buttons
+        initSectionButtons();
     }
     
     // Handle filter options
@@ -431,4 +436,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Handle section buttons in the course modal
+    function initSectionButtons() {
+        const sectionBtns = document.querySelectorAll('.section-btn');
+        sectionBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                sectionBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // In a real app, you would update the timetable here
+                // For demo purposes, we'll just show an alert
+                const sectionName = this.textContent.trim();
+                console.log(`Switching to ${sectionName} schedule`);
+                
+                // Code to update the timetable would go here
+            });
+        });
+    }
 });

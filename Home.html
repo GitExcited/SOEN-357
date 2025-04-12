@@ -275,6 +275,181 @@
                     </svg>
                 </div>
             </div>
+
+            <!-- Add these sections after the requisite tree section in the modal -->
+            <div class="course-schedule">
+                <h3>Course Schedule</h3>
+                <div class="section-selector">
+                    <button class="section-btn active">Section UV</button>
+                    <button class="section-btn">Section XY</button>
+                    <button class="section-btn">Section ZZ</button>
+                </div>
+                
+                <div class="timetable">
+                    <div class="time-headers">
+                        <div class="day-column"></div>
+                        <div class="time-header">08:00</div>
+                        <div class="time-header">12:00</div>
+                        <div class="time-header">20:00</div>
+                    </div>
+                    
+                    <div class="timetable-row">
+                        <div class="day-column">MON</div>
+                        <div class="time-slots">
+                            <div class="slot lec" style="grid-column: 1 / 3;">LEC</div>
+                            <div class="empty-slot" style="grid-column: 3 / 4;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="timetable-row">
+                        <div class="day-column">TUE</div>
+                        <div class="time-slots">
+                            <div class="empty-slot" style="grid-column: 1 / 3;"></div>
+                            <div class="slot tut" style="grid-column: 3 / 4;">TUT</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timetable-row">
+                        <div class="day-column">WED</div>
+                        <div class="time-slots">
+                            <div class="empty-slot" style="grid-column: 1 / 4;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="timetable-row">
+                        <div class="day-column">THR</div>
+                        <div class="time-slots">
+                            <div class="slot lec" style="grid-column: 2 / 3;">LEC</div>
+                            <div class="empty-slot" style="grid-column: 3 / 4;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="timetable-row">
+                        <div class="day-column">FRI</div>
+                        <div class="time-slots">
+                            <div class="empty-slot" style="grid-column: 1 / 4;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="professors-info">
+                <h3>Professors</h3>
+                <table class="professors-table">
+                    <thead>
+                        <tr>
+                            <th>Professor</th>
+                            <th>Email</th>
+                            <th>Office</th>
+                            <th>RateMyProfessor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dr Placeholder</td>
+                            <td><a href="mailto:drprofessor@concordia.ca">drprofessor@concordia.ca</a></td>
+                            <td>H 920</td>
+                            <td><a href="#" class="rate-link"><i class="fas fa-external-link-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Dr Teacher</td>
+                            <td><a href="mailto:anotherTeacher@concordia.ca">anotherTeacher@concordia.ca</a></td>
+                            <td>EV 1.123</td>
+                            <td><a href="#" class="rate-link"><i class="fas fa-external-link-alt"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Course Info Modal -->
+    <div id="courseInfoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            
+            <div class="course-header">
+                <h1 id="modalCourseCode">COMP 335</h1>
+                <button class="add-course-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Course</span>
+                </button>
+            </div>
+            
+            <div class="course-details">
+                <div class="department-info">
+                    <p>Engineering and Computer Science Department</p>
+                    <div class="term-buttons">
+                        <button class="term-btn fall">Fall 2025</button>
+                        <button class="term-btn winter">Winter 2026</button>
+                    </div>
+                </div>
+                
+                <div class="course-workload">
+                    <h3>Workload</h3>
+                    <div class="workload-charts">
+                        <div class="chart">
+                            <h4>Exams</h4>
+                            <div class="chart-bars">
+                                <div class="bar" style="height: 70%"></div>
+                                <div class="bar" style="height: 90%"></div>
+                                <div class="bar" style="height: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <h4>Labs</h4>
+                            <div class="chart-bars">
+                                <div class="bar" style="height: 50%"></div>
+                                <div class="bar" style="height: 80%"></div>
+                                <div class="bar" style="height: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <h4>Projects</h4>
+                            <div class="chart-bars">
+                                <div class="bar" style="height: 60%"></div>
+                                <div class="bar" style="height: 30%"></div>
+                                <div class="bar" style="height: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="download-section">
+                    <button class="download-btn">
+                        <i class="fas fa-download"></i>
+                        <span>Download course outline</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="course-sections">
+                <div class="course-intro">
+                    <h3>Introduction to theoretical computer science</h3>
+                    <p>This course covers the following topics: finite state automata and regular languages; push-down automata and context-free languages; pumping lemmas; applications to parsing; Turing machines; undecidability and decidability.</p>
+                </div>
+                
+                <div class="course-credits">
+                    <h2>4</h2>
+                    <p>Credits</p>
+                </div>
+            </div>
+            
+            <div class="requisite-tree">
+                <h3>Requisite Tree</h3>
+                <div class="tree-diagram">
+                    <!-- Simple representation of the tree -->
+                    <div class="tree-container">
+                        <div class="tree-node current">COMP 335</div>
+                        <div class="tree-connections">
+                            <div class="tree-node">COMP 228</div>
+                            <div class="tree-node">COMP 352</div>
+                            <div class="tree-node">COMP 456</div>
+                            <div class="tree-node">COMP 450</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
